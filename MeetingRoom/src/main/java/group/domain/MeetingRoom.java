@@ -55,16 +55,13 @@ public class MeetingRoom {
 
         */
 
-        /** Example 2:  finding and process
+        /** Example 2:  finding and process */
         
-        repository().findById(conferenceReserved.get???()).ifPresent(meetingRoom->{
+        repository().findById(conferenceReserved.getRoomId()).ifPresent(meetingRoom->{
             
-            meetingRoom // do something
+            meetingRoom.setUsed(true); // do something
             repository().save(meetingRoom);
-
-
          });
-        */
 
     }
 

@@ -20,17 +20,19 @@ public class Conference {
 
     private String name;
 
-    private Integer roomId;
+    private Long roomId;
 
-    private Integer hostId;
+    private Long hostId;
 
     @ElementCollection
-    private List<Integer> userIds;
+    private List<Long> userIds;
 
     @PostPersist
     public void onPostPersist() {
         ConferenceReserved conferenceReserved = new ConferenceReserved(this);
         conferenceReserved.publishAfterCommit();
+
+        //if(MeetingRoom.getUsed()) throw new RuntimeException("Room is already taken!");
 
         ConferenceInformationChanged conferenceInformationChanged = new ConferenceInformationChanged(
             this

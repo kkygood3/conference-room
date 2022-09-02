@@ -14,8 +14,8 @@ public class ConferenceReserved extends AbstractEvent {
     private Date reserveStartTime;
     private Date reserveEndTime;
     private String reserveName;
-    private Integer roomId;
-    private Integer hostId;
+    private Long roomId;
+    private Long hostId;
     private Object userIds;
     // keep
 
