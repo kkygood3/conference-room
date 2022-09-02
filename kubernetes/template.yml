@@ -3,22 +3,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: RoomManage
+  name: MeetingRoom
   labels:
-    app: RoomManage
+    app: MeetingRoom
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: RoomManage
+      app: MeetingRoom
   template:
     metadata:
       labels:
-        app: RoomManage
+        app: MeetingRoom
     spec:
       containers:
-        - name: RoomManage
-          image: username/RoomManage:latest
+        - name: MeetingRoom
+          image: username/MeetingRoom:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -43,22 +43,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: UserListManage
+  name: UserList
   labels:
-    app: UserListManage
+    app: UserList
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: UserListManage
+      app: UserList
   template:
     metadata:
       labels:
-        app: UserListManage
+        app: UserList
     spec:
       containers:
-        - name: UserListManage
-          image: username/UserListManage:latest
+        - name: UserList
+          image: username/UserList:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -83,22 +83,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: RoomReservationApp
+  name: ReservationApp
   labels:
-    app: RoomReservationApp
+    app: ReservationApp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: RoomReservationApp
+      app: ReservationApp
   template:
     metadata:
       labels:
-        app: RoomReservationApp
+        app: ReservationApp
     spec:
       containers:
-        - name: RoomReservationApp
-          image: username/RoomReservationApp:latest
+        - name: ReservationApp
+          image: username/ReservationApp:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -158,6 +158,46 @@ spec:
             periodSeconds: 5
             failureThreshold: 5
 
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: View
+  labels:
+    app: View
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: View
+  template:
+    metadata:
+      labels:
+        app: View
+    spec:
+      containers:
+        - name: View
+          image: username/View:latest
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 10
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 10
+          livenessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 120
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 5
+
 
 ---
 
@@ -165,15 +205,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: RoomManage
+  name: MeetingRoom
   labels:
-    app: RoomManage
+    app: MeetingRoom
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: RoomManage
+    app: MeetingRoom
 
 
 ---
@@ -182,15 +222,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: UserListManage
+  name: UserList
   labels:
-    app: UserListManage
+    app: UserList
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: UserListManage
+    app: UserList
 
 
 ---
@@ -199,15 +239,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: RoomReservationApp
+  name: ReservationApp
   labels:
-    app: RoomReservationApp
+    app: ReservationApp
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: RoomReservationApp
+    app: ReservationApp
 
 
 ---
@@ -225,4 +265,21 @@ spec:
       targetPort: 8080
   selector:
     app: Alarm
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: View
+  labels:
+    app: View
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: View
 

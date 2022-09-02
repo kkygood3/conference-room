@@ -14,14 +14,10 @@
                             
                             
                             
-                            
-                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
                             [ ReserveId :  {{data.reserveId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ StartTime :  {{data.startTime }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ EndTime :  {{data.endTime }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Name :  {{data.name }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ RoomId :  {{data.roomId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ HostId :  {{data.hostId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -108,8 +104,6 @@
             
             this.newValue = {
                 'reserveId': 0,
-                'startTime': '2022-09-02',
-                'endTime': '2022-09-02',
                 'name': '',
                 'roomId': 0,
                 'hostId': 0,

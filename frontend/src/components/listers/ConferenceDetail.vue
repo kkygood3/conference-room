@@ -9,12 +9,6 @@
                 <Number label="ReserveId" v-model="item.reserveId" :editMode="editMode" @change="change" />
             </div>
             <div>
-                <Date label="StartTime" v-model="item.startTime" :editMode="editMode" @change="change" />
-            </div>
-            <div>
-                <Date label="EndTime" v-model="item.endTime" :editMode="editMode" @change="change" />
-            </div>
-            <div>
                 <String label="Name" v-model="item.name" :editMode="editMode" @change="change" />
             </div>
             <div>

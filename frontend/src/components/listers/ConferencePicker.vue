@@ -18,12 +18,6 @@
                                 ReserveId :  {{item.reserveId }}
                             </v-list-item-subtitle>
                             <v-list-item-subtitle>
-                                StartTime :  {{item.startTime }}
-                            </v-list-item-subtitle>
-                            <v-list-item-subtitle>
-                                EndTime :  {{item.endTime }}
-                            </v-list-item-subtitle>
-                            <v-list-item-subtitle>
                                 Name :  {{item.name }}
                             </v-list-item-subtitle>
                             <v-list-item-subtitle>
@@ -85,11 +79,7 @@
                 var obj = {}
                 if(val != undefined) {
                     var arr = this.list[val]._links.self.href.split('/');
-                    
-                    
-                    
-                    
-                    
+                    obj['reserveId'] = arr[4]; 
                     
                     
                     

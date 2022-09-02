@@ -69,8 +69,6 @@
             
             me.newValue = {
                 'reserveId': 0,
-                'startTime': '2022-09-02',
-                'endTime': '2022-09-02',
                 'name': '',
                 'roomId': 0,
                 'hostId': 0,

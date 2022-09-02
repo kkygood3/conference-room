@@ -8,21 +8,20 @@ Vue.use(Router);
 import MeetingRoomManager from "./components/listers/MeetingRoomCards"
 import MeetingRoomDetail from "./components/listers/MeetingRoomDetail"
 
-import MeetingRoomListView from "./components/MeetingRoomListView"
-import MeetingRoomListViewDetail from "./components/MeetingRoomListViewDetail"
 import UserListManager from "./components/listers/UserListCards"
 import UserListDetail from "./components/listers/UserListDetail"
 
-import UserListView from "./components/UserListView"
-import UserListViewDetail from "./components/UserListViewDetail"
 import ConferenceManager from "./components/listers/ConferenceCards"
 import ConferenceDetail from "./components/listers/ConferenceDetail"
 
-import ReservationListView from "./components/ReservationListView"
-import ReservationListViewDetail from "./components/ReservationListViewDetail"
+
+
+import UserListView from "./components/UserListView"
+import UserListViewDetail from "./components/UserListViewDetail"
 import ReservationInfoView from "./components/ReservationInfoView"
 import ReservationInfoViewDetail from "./components/ReservationInfoViewDetail"
-
+import RoomListView from "./components/RoomListView"
+import RoomListViewDetail from "./components/RoomListViewDetail"
 
 export default new Router({
     // mode: 'history',
@@ -40,16 +39,6 @@ export default new Router({
             },
 
             {
-                path: '/meetingRoomLists',
-                name: 'MeetingRoomListView',
-                component: MeetingRoomListView
-            },
-            {
-                path: '/meetingRoomLists/:id',
-                name: 'MeetingRoomListViewDetail',
-                component: MeetingRoomListViewDetail
-            },
-            {
                 path: '/userLists',
                 name: 'UserListManager',
                 component: UserListManager
@@ -59,6 +48,19 @@ export default new Router({
                 name: 'UserListDetail',
                 component: UserListDetail
             },
+
+            {
+                path: '/conferences',
+                name: 'ConferenceManager',
+                component: ConferenceManager
+            },
+            {
+                path: '/conferences/:id',
+                name: 'ConferenceDetail',
+                component: ConferenceDetail
+            },
+
+
 
             {
                 path: '/userLists',
@@ -71,27 +73,6 @@ export default new Router({
                 component: UserListViewDetail
             },
             {
-                path: '/conferences',
-                name: 'ConferenceManager',
-                component: ConferenceManager
-            },
-            {
-                path: '/conferences/:id',
-                name: 'ConferenceDetail',
-                component: ConferenceDetail
-            },
-
-            {
-                path: '/reservationLists',
-                name: 'ReservationListView',
-                component: ReservationListView
-            },
-            {
-                path: '/reservationLists/:id',
-                name: 'ReservationListViewDetail',
-                component: ReservationListViewDetail
-            },
-            {
                 path: '/reservationInfos',
                 name: 'ReservationInfoView',
                 component: ReservationInfoView
@@ -101,7 +82,16 @@ export default new Router({
                 name: 'ReservationInfoViewDetail',
                 component: ReservationInfoViewDetail
             },
-
+            {
+                path: '/roomLists',
+                name: 'RoomListView',
+                component: RoomListView
+            },
+            {
+                path: '/roomLists/:id',
+                name: 'RoomListViewDetail',
+                component: RoomListViewDetail
+            },
 
 
     ]

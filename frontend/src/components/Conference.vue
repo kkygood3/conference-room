@@ -18,8 +18,6 @@
 
         <v-card-text>
             <Number label="ReserveId" v-model="value.reserveId" :editMode="editMode"/>
-            <Date label="StartTime" v-model="value.startTime" :editMode="editMode"/>
-            <Date label="EndTime" v-model="value.endTime" :editMode="editMode"/>
             <String label="Name" v-model="value.name" :editMode="editMode"/>
             <Number label="RoomId" v-model="value.roomId" :editMode="editMode"/>
             <Number label="HostId" v-model="value.hostId" :editMode="editMode"/>

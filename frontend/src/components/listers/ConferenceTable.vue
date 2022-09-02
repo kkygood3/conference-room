@@ -67,8 +67,6 @@
             headers: 
                 [
                     { text: "reserveId", value: "reserveId" },
-                    { text: "startTime", value: "startTime" },
-                    { text: "endTime", value: "endTime" },
                     { text: "name", value: "name" },
                     { text: "roomId", value: "roomId" },
                     { text: "hostId", value: "hostId" },
@@ -91,8 +89,6 @@
 
             this.newValue = {
                 'reserveId': 0,
-                'startTime': '2022-09-02',
-                'endTime': '2022-09-02',
                 'name': '',
                 'roomId': 0,
                 'hostId': 0,

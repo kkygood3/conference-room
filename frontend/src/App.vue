@@ -49,16 +49,6 @@
                     </v-list-item>
 
 
-                    <v-list-item
-                        class="px-2"
-                        key="meetingRoomLists"
-                        to="meetingRoomLists"
-                        @click="changeUrl()"
-                        color="deep-purple lighten-2"
-                        style="font-weight:700;"
-                    >
-                        MeetingRoomList
-                    </v-list-item>
 
                     <v-list-item
                         class="px-2"
@@ -72,16 +62,6 @@
                     </v-list-item>
 
 
-                    <v-list-item
-                        class="px-2"
-                        key="userLists"
-                        to="userLists"
-                        @click="changeUrl()"
-                        color="deep-purple lighten-2"
-                        style="font-weight:700;"
-                    >
-                        UserList
-                    </v-list-item>
 
                     <v-list-item
                         class="px-2"
@@ -95,15 +75,17 @@
                     </v-list-item>
 
 
+
+
                     <v-list-item
                         class="px-2"
-                        key="reservationLists"
-                        to="reservationLists"
+                        key="userLists"
+                        to="userLists"
                         @click="changeUrl()"
                         color="deep-purple lighten-2"
                         style="font-weight:700;"
                     >
-                        ReservationList
+                        UserList
                     </v-list-item>
                     <v-list-item
                         class="px-2"
@@ -115,7 +97,16 @@
                     >
                         ReservationInfo
                     </v-list-item>
-
+                    <v-list-item
+                        class="px-2"
+                        key="roomLists"
+                        to="roomLists"
+                        @click="changeUrl()"
+                        color="deep-purple lighten-2"
+                        style="font-weight:700;"
+                    >
+                        RoomList
+                    </v-list-item>
 
 
                 </v-list>
@@ -177,35 +168,6 @@
                                     class="mx-auto"
                                     outlined
                                     rounded
-                                    key="meetingRoomLists"
-                                    to="/meetingRoomLists"
-                                    @click="changeUrl()"
-                                    color="deep-purple lighten-2"
-                                    style="font-weight:500; font-size:20px; padding:15px;"
-                                >
-                                    MeetingRoomList
-                                </v-btn>
-                            </v-card-actions>
-                        </v-card>
-                        <v-card
-                            class="mx-auto"
-                            style="height:300px; width:300px; margin-bottom:20px;"
-                            outlined
-                        >
-                            <v-list-item>
-                                <v-list-item-avatar 
-                                    class="mx-auto"
-                                    size="80"
-                                    style="margin-top:80px;"
-                                ><span class="mdi mdi-apps" style="font-size:60px; color:#9575CD;"></span>
-                                </v-list-item-avatar>
-                            </v-list-item>
-
-                            <v-card-actions>
-                                <v-btn 
-                                    class="mx-auto"
-                                    outlined
-                                    rounded
                                     key="userLists"
                                     to="/userLists"
                                     @click="changeUrl()"
@@ -217,35 +179,6 @@
                             </v-card-actions>
                         </v-card>
 
-                        <v-card
-                            class="mx-auto"
-                            style="height:300px; width:300px; margin-bottom:20px;"
-                            outlined
-                        >
-                            <v-list-item>
-                                <v-list-item-avatar 
-                                    class="mx-auto"
-                                    size="80"
-                                    style="margin-top:80px;"
-                                ><span class="mdi mdi-apps" style="font-size:60px; color:#9575CD;"></span>
-                                </v-list-item-avatar>
-                            </v-list-item>
-
-                            <v-card-actions>
-                                <v-btn 
-                                    class="mx-auto"
-                                    outlined
-                                    rounded
-                                    key="userLists"
-                                    to="/userLists"
-                                    @click="changeUrl()"
-                                    color="deep-purple lighten-2"
-                                    style="font-weight:500; font-size:20px; padding:15px;"
-                                >
-                                    UserList
-                                </v-btn>
-                            </v-card-actions>
-                        </v-card>
                         <v-card
                             class="mx-auto"
                             style="height:300px; width:300px; margin-bottom:20px;"
@@ -276,6 +209,8 @@
                             </v-card-actions>
                         </v-card>
 
+
+
                         <v-card
                             class="mx-auto"
                             style="height:300px; width:300px; margin-bottom:20px;"
@@ -295,13 +230,13 @@
                                     class="mx-auto"
                                     outlined
                                     rounded
-                                    key="reservationLists"
-                                    to="/reservationLists"
+                                    key="userLists"
+                                    to="/userLists"
                                     @click="changeUrl()"
                                     color="deep-purple lighten-2"
                                     style="font-weight:500; font-size:20px; padding:15px;"
                                 >
-                                    ReservationList
+                                    UserList
                                 </v-btn>
                             </v-card-actions>
                         </v-card>
@@ -334,7 +269,35 @@
                                 </v-btn>
                             </v-card-actions>
                         </v-card>
+                        <v-card
+                            class="mx-auto"
+                            style="height:300px; width:300px; margin-bottom:20px;"
+                            outlined
+                        >
+                            <v-list-item>
+                                <v-list-item-avatar 
+                                    class="mx-auto"
+                                    size="80"
+                                    style="margin-top:80px;"
+                                ><span class="mdi mdi-apps" style="font-size:60px; color:#9575CD;"></span>
+                                </v-list-item-avatar>
+                            </v-list-item>
 
+                            <v-card-actions>
+                                <v-btn 
+                                    class="mx-auto"
+                                    outlined
+                                    rounded
+                                    key="roomLists"
+                                    to="/roomLists"
+                                    @click="changeUrl()"
+                                    color="deep-purple lighten-2"
+                                    style="font-weight:500; font-size:20px; padding:15px;"
+                                >
+                                    RoomList
+                                </v-btn>
+                            </v-card-actions>
+                        </v-card>
                 </v-row>
             </v-container>
         </v-main>

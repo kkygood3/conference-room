@@ -8,22 +8,26 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: RoomManage
+        - id: MeetingRoom
           uri: http://localhost:8081
           predicates:
-            - Path=/meetingRooms/**, /meetingRoomLists/**
-        - id: UserListManage
+            - Path=/meetingRooms/**, 
+        - id: UserList
           uri: http://localhost:8082
           predicates:
-            - Path=/userLists/**, /userLists/**
-        - id: RoomReservationApp
+            - Path=/userLists/**, 
+        - id: ReservationApp
           uri: http://localhost:8083
           predicates:
-            - Path=/conferences/**, /reservationLists/**, /reservationInfos/**
+            - Path=/conferences/**, 
         - id: Alarm
           uri: http://localhost:8084
           predicates:
             - Path=, 
+        - id: View
+          uri: http://localhost:8085
+          predicates:
+            - Path=, /userLists/**, /reservationInfos/**, /roomLists/**
         - id: frontend
           uri: http://localhost:8080
           predicates:
@@ -47,22 +51,26 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: RoomManage
-          uri: http://roomManage:8080
+        - id: MeetingRoom
+          uri: http://meetingRoom:8080
           predicates:
-            - Path=/meetingRooms/**, /meetingRoomLists/**
-        - id: UserListManage
-          uri: http://userListManage:8080
+            - Path=/meetingRooms/**, 
+        - id: UserList
+          uri: http://userList:8080
           predicates:
-            - Path=/userLists/**, /userLists/**
-        - id: RoomReservationApp
-          uri: http://roomReservationApp:8080
+            - Path=/userLists/**, 
+        - id: ReservationApp
+          uri: http://reservationApp:8080
           predicates:
-            - Path=/conferences/**, /reservationLists/**, /reservationInfos/**
+            - Path=/conferences/**, 
         - id: Alarm
           uri: http://alarm:8080
           predicates:
             - Path=, 
+        - id: View
+          uri: http://view:8080
+          predicates:
+            - Path=, /userLists/**, /reservationInfos/**, /roomLists/**
         - id: frontend
           uri: http://frontend:8080
           predicates:
