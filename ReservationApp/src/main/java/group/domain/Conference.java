@@ -25,7 +25,6 @@ public class Conference {
     private Integer hostId;
 
     @ElementCollection
-    @ElementCollection
     private List<Integer> userIds;
 
     @PostPersist
