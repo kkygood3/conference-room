@@ -1,0 +1,82 @@
+server:
+  port: 8088
+
+---
+
+spring:
+  profiles: default
+  cloud:
+    gateway:
+      routes:
+        - id: RoomManage
+          uri: http://localhost:8081
+          predicates:
+            - Path=/meetingRooms/**, /meetingRoomLists/**
+        - id: UserListManage
+          uri: http://localhost:8082
+          predicates:
+            - Path=/userLists/**, /userLists/**
+        - id: RoomReservationApp
+          uri: http://localhost:8083
+          predicates:
+            - Path=/conferences/**, /reservationLists/**, /reservationInfos/**
+        - id: Alarm
+          uri: http://localhost:8084
+          predicates:
+            - Path=, 
+        - id: frontend
+          uri: http://localhost:8080
+          predicates:
+            - Path=/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    gateway:
+      routes:
+        - id: RoomManage
+          uri: http://roomManage:8080
+          predicates:
+            - Path=/meetingRooms/**, /meetingRoomLists/**
+        - id: UserListManage
+          uri: http://userListManage:8080
+          predicates:
+            - Path=/userLists/**, /userLists/**
+        - id: RoomReservationApp
+          uri: http://roomReservationApp:8080
+          predicates:
+            - Path=/conferences/**, /reservationLists/**, /reservationInfos/**
+        - id: Alarm
+          uri: http://alarm:8080
+          predicates:
+            - Path=, 
+        - id: frontend
+          uri: http://frontend:8080
+          predicates:
+            - Path=/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+server:
+  port: 8080
