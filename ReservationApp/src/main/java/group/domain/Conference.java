@@ -37,10 +37,10 @@ public class Conference {
             this
         );
         conferenceInformationChanged.publishAfterCommit();
-        // Get request from MeetingRoom
-        //group.external.MeetingRoom meetingRoom =
-        //    Application.applicationContext.getBean(group.external.MeetingRoomService.class)
-        //    .getMeetingRoom(/** mapping value needed */);
+        // Get request from UserList
+        //group.external.UserList userList =
+        //    Application.applicationContext.getBean(group.external.UserListService.class)
+        //    .getUserList(/** mapping value needed */);
 
     }
 

@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @FeignClient(
-    name = "MeetingRoom",
-    url = "${api.url.MeetingRoom}",
-    fallback = MeetingRoomServiceImpl.class
+    name = "UserList",
+    url = "${api.url.UserList}",
+    fallback = UserListServiceImpl.class
 )
-public interface MeetingRoomService {
-    @RequestMapping(method = RequestMethod.GET, path = "/meetingRooms/{roomId}")
-    public MeetingRoom getMeetingRoom(@PathVariable("roomId") Long roomId);
+public interface UserListService {
+    @RequestMapping(method = RequestMethod.GET, path = "/userLists/{userId}")
+    public UserList getUserList(@PathVariable("userId") Long userId);
     // keep
 
 }
