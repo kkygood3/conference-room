@@ -14,9 +14,9 @@ public class ConferenceReservationCanceled extends AbstractEvent {
     private Date startTime;
     private Date endTime;
     private String name;
-    private Integer roomId;
-    private Integer hostId;
-    private List<Integer> userIds;
+    private Long roomId;
+    private Long hostId;
+    private List<Long> userIds;
 
     public ConferenceReservationCanceled(Conference aggregate) {
         super(aggregate);

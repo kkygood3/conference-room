@@ -49,6 +49,7 @@ logging:
 api:
   url:
     UserList: localhost:8082
+    MeetingRoom: localhost:8081
 
 server:
   port: 8083

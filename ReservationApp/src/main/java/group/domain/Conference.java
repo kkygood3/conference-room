@@ -4,6 +4,8 @@ import group.ReservationAppApplication;
 import group.domain.ConferenceInformationChanged;
 import group.domain.ConferenceReservationCanceled;
 import group.domain.ConferenceReserved;
+import group.external.MeetingRoom;
+
 import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
@@ -29,10 +31,11 @@ public class Conference {
 
     @PostPersist
     public void onPostPersist() {
+        /*
         ConferenceReserved conferenceReserved = new ConferenceReserved(this);
         conferenceReserved.publishAfterCommit();
 
-        //if(MeetingRoom.getUsed()) throw new RuntimeException("Room is already taken!");
+        if(MeetingRoom.getUsed()) throw new RuntimeException("Room is already taken!");
 
         ConferenceInformationChanged conferenceInformationChanged = new ConferenceInformationChanged(
             this
@@ -41,8 +44,20 @@ public class Conference {
         // Get request from UserList
         //group.external.UserList userList =
         //    Application.applicationContext.getBean(group.external.UserListService.class)
-        //    .getUserList(/** mapping value needed */);
+        //    .getUserList(/** mapping value needed */
+        // ); 
 
+        group.external.MeetingRoom meetingRoom =
+           ReservationAppApplication.applicationContext.getBean(group.external.MeetingRoomService.class)
+           .getMeetingRoom(getRoomId().longValue());
+
+        if(meetingRoom.getUsed()) throw new RuntimeException("Room is already taken!");
+        
+        
+        ConferenceReserved reserved = new ConferenceReserved(this);
+        
+        reserved.publishAfterCommit();
+    
     }
 
     @PreUpdate

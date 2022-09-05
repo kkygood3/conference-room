@@ -14,9 +14,9 @@ public class ConferenceInformationChanged extends AbstractEvent {
     private Date reserveStartTime;
     private Date reserveEndTime;
     private String reserveName;
-    private Integer roomId;
-    private Integer hostId;
-    private List<Integer> userIds;
+    private Long roomId;
+    private Long hostId;
+    private List<Long> userIds;
 
     public ConferenceInformationChanged(Conference aggregate) {
         super(aggregate);

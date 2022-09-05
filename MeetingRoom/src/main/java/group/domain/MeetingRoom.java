@@ -21,7 +21,7 @@ public class MeetingRoom {
 
     private String location;
 
-    private Boolean used;
+    private Boolean used = false;
 
     private String remark;
 
@@ -56,9 +56,12 @@ public class MeetingRoom {
         */
 
         /** Example 2:  finding and process */
+
         
-        repository().findById(conferenceReserved.getRoomId()).ifPresent(meetingRoom->{
-            
+            //repository().findById(conferenceReserved.getRoomId()).ifPresent(meetingRoom->{
+            repository().findById(Long.valueOf(conferenceReserved.getRoomId())).ifPresent(meetingRoom->{
+                
+            System.out.println(meetingRoom.getUsed());
             meetingRoom.setUsed(true); // do something
             repository().save(meetingRoom);
          });
@@ -84,6 +87,11 @@ public class MeetingRoom {
 
          });
         */
+        repository().findById(Long.valueOf(conferenceReservationCanceled.getRoomId())).ifPresent(meetingRoom->{
+            
+            meetingRoom.setUsed(false); // do something
+            repository().save(meetingRoom);
+         });
 
     }
 
