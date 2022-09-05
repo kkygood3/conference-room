@@ -26,7 +26,7 @@ public class ReservationInfoViewHandler {
             // view 객체 생성
             ReservationInfo reservationInfo = new ReservationInfo();
             // view 객체에 이벤트의 Value 를 set 함
-            reservationInfo.setRoomId(Long.valueOf(conferenceReserved.getRoomId()));
+            //reservationInfo.setRoomId(conferenceReserved.getRoomId());
             reservationInfo.setHostId(
                 Long.valueOf(conferenceReserved.getName())
             );
@@ -84,13 +84,12 @@ public class ReservationInfoViewHandler {
         try {
             if (!conferenceReservationCanceled.validate()) return;
             // view 레파지 토리에 삭제 쿼리
-            reservationInfoRepository.deleteByRoomId(
-                Long.valueOf(conferenceReservationCanceled.getRoomId())
-            );
+            /*reservationInfoRepository.deleteByRoomId(
+                conferenceReservationCanceled.getRoomId()
+            );*/
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
     // keep
-
 }
