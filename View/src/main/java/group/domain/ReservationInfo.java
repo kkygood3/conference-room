@@ -1,16 +1,24 @@
 package group.domain;
 
-import java.util.Date;
-import java.util.List;
 import javax.persistence.*;
+import java.util.List;
+//import java.util.Date;
 import lombok.Data;
 
 @Entity
-@Table(name = "ReservationInfo_table")
+@Table(name="ReservationInfo_table")
 @Data
 public class ReservationInfo {
 
-    @Id
-    //@GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
+        @Id
+        //@GeneratedValue(strategy=GenerationType.AUTO)
+        private Long id;
+        private Long hostId;
+        private Long roomId;
+        private List<Long> userIds;
+        private String reserveName;
+        private String roomName;
+        private Boolean roomUsed;
+
+
 }

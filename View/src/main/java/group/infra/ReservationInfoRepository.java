@@ -11,6 +11,9 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 )
 public interface ReservationInfoRepository
     extends PagingAndSortingRepository<ReservationInfo, Long> {
+    List<ReservationInfo> findByRoomId(Long roomId);
+
+    void deleteByRoomId(Long roomId);
     // keep
 
 }

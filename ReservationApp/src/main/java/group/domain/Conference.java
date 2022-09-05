@@ -47,6 +47,11 @@ public class Conference {
         //    .getUserList(/** mapping value needed */
         // ); 
 
+        // if(userList.getUserId != hostId ) throw new RuntimeException(message:"host is not exist!");
+        // for(i=0;i>;i++) {
+        // if(userList.getUserId != userIds[i] ) throw new RuntimeException(message:"user is not exist!");
+        // }
+
         group.external.MeetingRoom meetingRoom =
            ReservationAppApplication.applicationContext.getBean(group.external.MeetingRoomService.class)
            .getMeetingRoom(getRoomId().longValue());
